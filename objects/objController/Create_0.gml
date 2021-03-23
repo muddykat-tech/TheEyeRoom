@@ -29,13 +29,15 @@ globalvar show_numbers;
 globalvar show_bars;
 globalvar chosen_bars;
 globalvar overlay_all;
+globalvar show_alphabet;
 
 draw_set_font(fnt_default);
 
-overlay_all = true;
+overlay_all = false;
 chosen_bars = false;
+show_alphabet = false;
 
-show_bars = true;
+show_bars = false;
 show_eyes = true;
 show_numbers = false;
 
@@ -48,6 +50,11 @@ message_map = ds_map_create();
 
 globalvar selected_message;
 selected_message = MESSAGE_ID.E1;
+
+globalvar use_custom;
+use_custom = false;
+globalvar custom_data;
+custom_data = "";
 
 message_0 = "";
 message_0 = addEyeDataLine(message_0, "2010132233040411302321143130330040240005");

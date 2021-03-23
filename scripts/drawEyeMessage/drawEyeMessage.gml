@@ -17,6 +17,13 @@ function drawEyeMessage(eye_data_holder){
 			ypos += 7 * image_size;
 			xpos = message_x + ((6 * image_size) * isOffsetLine);
 		} else {
+			if(show_alphabet){
+				if(eye_data != EYE_POSITIONS.newline){
+					draw_set_color(c_blue);
+					draw_text_transformed(xpos,ypos,toLetter(eye_data), image_size * 0.75, image_size * 0.75,0);
+					draw_set_color(c_white);
+				}
+			}
 			if(show_eyes){
 				draw_sprite_ext(sprite_eyes, eye_data, xpos, ypos,image_size,image_size,0,c_white,1);
 			}
@@ -28,7 +35,7 @@ function drawEyeMessage(eye_data_holder){
 				}
 			}
 			if(show_bars){
-				var bar_types = [sprite_eyes_lines, sprite_eyes_lines_boxed];
+				var bar_types = [sprite_eyes_lines, sprite_eyes_lines_boxed, sprite_eyes_lines_origin];
 				draw_sprite_ext(bar_types[chosen_bars], eye_data, xpos, ypos,image_size,image_size,0,c_white,1);
 			}
 		xpos += (11) * image_size;

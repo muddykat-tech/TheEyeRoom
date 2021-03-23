@@ -8,6 +8,8 @@
     {"id":{"name":"sprite_eyes_lines_boxed","path":"sprites/sprite_eyes_lines_boxed/sprite_eyes_lines_boxed.yy",},"order":2,},
     {"id":{"name":"fnt_default","path":"fonts/fnt_default/fnt_default.yy",},"order":0,},
     {"id":{"name":"drawEyeMessage","path":"scripts/drawEyeMessage/drawEyeMessage.yy",},"order":2,},
+    {"id":{"name":"sprite_eyes_lines_origin","path":"sprites/sprite_eyes_lines_origin/sprite_eyes_lines_origin.yy",},"order":3,},
+    {"id":{"name":"toLetter","path":"scripts/toLetter/toLetter.yy",},"order":6,},
     {"id":{"name":"addEyeDataLine","path":"scripts/addEyeDataLine/addEyeDataLine.yy",},"order":0,},
     {"id":{"name":"getMessageName","path":"scripts/getMessageName/getMessageName.yy",},"order":5,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
