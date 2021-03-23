@@ -1,9 +1,15 @@
 {
   "resources": [
     {"id":{"name":"sprite_eyes","path":"sprites/sprite_eyes/sprite_eyes.yy",},"order":0,},
+    {"id":{"name":"addNewEyeMessage","path":"scripts/addNewEyeMessage/addNewEyeMessage.yy",},"order":4,},
     {"id":{"name":"objController","path":"objects/objController/objController.yy",},"order":0,},
+    {"id":{"name":"sprite_eyes_lines","path":"sprites/sprite_eyes_lines/sprite_eyes_lines.yy",},"order":1,},
+    {"id":{"name":"drawUI","path":"scripts/drawUI/drawUI.yy",},"order":3,},
+    {"id":{"name":"sprite_eyes_lines_boxed","path":"sprites/sprite_eyes_lines_boxed/sprite_eyes_lines_boxed.yy",},"order":2,},
+    {"id":{"name":"fnt_default","path":"fonts/fnt_default/fnt_default.yy",},"order":0,},
     {"id":{"name":"drawEyeMessage","path":"scripts/drawEyeMessage/drawEyeMessage.yy",},"order":2,},
     {"id":{"name":"addEyeDataLine","path":"scripts/addEyeDataLine/addEyeDataLine.yy",},"order":0,},
+    {"id":{"name":"getMessageName","path":"scripts/getMessageName/getMessageName.yy",},"order":5,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
