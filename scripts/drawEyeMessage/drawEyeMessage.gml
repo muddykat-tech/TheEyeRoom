@@ -17,6 +17,7 @@ function drawEyeMessage(eye_data_holder){
 			ypos += 7 * image_size;
 			xpos = message_x + ((6 * image_size) * isOffsetLine);
 		} else {
+	
 			if(show_alphabet){
 				if(eye_data != EYE_POSITIONS.newline){
 					draw_set_color(c_blue);
@@ -37,6 +38,27 @@ function drawEyeMessage(eye_data_holder){
 			if(show_bars){
 				var bar_types = [sprite_eyes_lines, sprite_eyes_lines_boxed, sprite_eyes_lines_origin];
 				draw_sprite_ext(bar_types[chosen_bars], eye_data, xpos, ypos,image_size,image_size,0,c_white,1);
+			}
+		
+			if(show_color_blocks){
+				draw_sprite_ext(eye_color_blocks,eye_data, xpos, ypos,image_size,image_size,0,c_white,1);
+			}
+			
+			if(isolation_mode){
+				if(!has_spawned_isolation_bricks){
+					var check = instance_create_layer(xpos,ypos,"Instances",object_overlay_checker);
+					check.image_xscale = image_size;
+					check.image_yscale = image_size;
+					check.eye_index = eye_data;
+					check.xpos = xpos - message_x;
+					check.ypos = ypos - message_y;
+				}
+			}
+			
+			if(blackout_mode){
+				if(eye_data != blackout_index){
+					draw_sprite_ext(eye_blackout,0, xpos, ypos,image_size,image_size,0,c_white,1);
+				}
 			}
 		xpos += (11) * image_size;
 		}

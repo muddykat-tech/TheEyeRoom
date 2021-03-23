@@ -10,7 +10,7 @@ var saxis = keyboard_check_pressed(ord("W")) - keyboard_check_pressed(ord("S"));
 message_size = (min(8,max(1,message_size + (saxis * 0.25))));
 
 if(keyboard_check_released(ord("N"))){
-	show_numbers = !show_numbers;	
+	show_numbers = !show_numbers;
 }
 
 

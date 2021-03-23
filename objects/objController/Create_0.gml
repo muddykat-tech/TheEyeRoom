@@ -56,6 +56,21 @@ use_custom = false;
 globalvar custom_data;
 custom_data = "";
 
+globalvar show_color_blocks;
+show_color_blocks = false;
+
+globalvar blackout_mode;
+blackout_mode = false;
+
+globalvar isolation_mode;
+isolation_mode = false;
+
+globalvar has_spawned_isolation_bricks;
+has_spawned_isolation_bricks = false;
+
+globalvar blackout_index;
+blackout_index = 0;
+
 message_0 = "";
 message_0 = addEyeDataLine(message_0, "2010132233040411302321143130330040240005");
 message_0 = addEyeDataLine(message_0, "0320412200014222421222201100032013411135");

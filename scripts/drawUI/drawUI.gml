@@ -17,18 +17,24 @@ function drawUI(){
 	
 	
 	if(keyboard_check_released(ord("I"))){
-		show_message("Arrow Keys to move eyes around" + 
-		"press 'E' to toggle eye image while 'N' toggles numbers." +
-		" press 'M' to cycle default game messages while 'O' will overlay all eyes" + 
-		"B will toggle line bars, while C will change the bar type" + 
-		"U will ask for custom data and display it" + 
-		"A will toggle showing ABCDE in place of numbers");
+		show_message("Arrow Keys to move eyes around\n" + 
+		"E to toggle eye image while 'N' toggles numbers.\n" +
+		"M to cycle default game messages while 'O' will overlay all eyes\n" + 
+		"B will toggle line bars, while C will change the bar type\n" + 
+		"U will ask for custom data and display it\n" + 
+		"A will toggle showing ABCDE in place of numbers\n" + 
+		"H will toggle color block mode\n" + 
+		"1 will trigger selective isolation of eye types\n" + 
+		"2 will trigger Isolation Mode which blacks out non-repeating eyes (turns overlay mode on)\n");
 	}
 	
 	if(keyboard_check_released(ord("M"))){
 		use_custom = false;
 		selected_message += 1
 		selected_message = selected_message % (MESSAGE_ID.E5 + 1);
+		
+		instance_destroy(object_overlay_checker);
+		has_spawned_isolation_bricks = false;
 	}
 	
 	if(keyboard_check_released(ord("U"))){
@@ -41,9 +47,29 @@ function drawUI(){
 		}
 		use_custom = true;
 	}
+	
+	if(keyboard_check_pressed(ord("1"))){
+		blackout_mode = !blackout_mode;
+		if(blackout_mode)
+		blackout_index = get_integer("What Eye index is to be shown?: 0-5", "0");
+	}
 		
 	if(keyboard_check_released(ord("T"))){
 		
+	}
+	
+	if(keyboard_check_pressed(ord("2"))){
+		isolation_mode = !isolation_mode;
+		if(!isolation_mode){
+			instance_destroy(object_overlay_checker);
+			has_spawned_isolation_bricks = false;
+		} else {
+			overlay_all = true;	
+		}
+	}
+	
+	if(keyboard_check_released(ord("H"))){
+		show_color_blocks = !show_color_blocks	
 	}
 	
 		
