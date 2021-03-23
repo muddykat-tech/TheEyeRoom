@@ -30,6 +30,7 @@ globalvar show_bars;
 globalvar chosen_bars;
 globalvar overlay_all;
 globalvar show_alphabet;
+globalvar music_mode;
 
 draw_set_font(fnt_default);
 
@@ -37,6 +38,7 @@ overlay_all = false;
 chosen_bars = false;
 show_alphabet = false;
 
+music_mode = false;
 show_bars = false;
 show_eyes = true;
 show_numbers = false;

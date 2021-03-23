@@ -25,7 +25,8 @@ function drawUI(){
 		"A will toggle showing ABCDE in place of numbers\n" + 
 		"H will toggle color block mode\n" + 
 		"1 will trigger selective isolation of eye types\n" + 
-		"2 will trigger Isolation Mode which blacks out non-repeating eyes (turns overlay mode on)\n");
+		"2 will trigger Isolation Mode which blacks out non-repeating eyes (turns overlay mode on)\n" +
+		"3 will toggle Music Mode 0 blank, 1 C, 2 D, 3 E, 4 F, 5 G");
 	}
 	
 	if(keyboard_check_released(ord("M"))){
@@ -72,7 +73,10 @@ function drawUI(){
 		show_color_blocks = !show_color_blocks	
 	}
 	
-		
+	if(keyboard_check_released(ord("3"))){
+		music_mode = !music_mode;
+	}
+	
 	if(keyboard_check_released(ord("A"))){
 		show_alphabet = !show_alphabet;
 	}
