@@ -92,6 +92,12 @@ selective_overlay = "";
 globalvar selective_overlay_on;
 selective_overlay_on = false;
 
+globalvar summation_view;
+summation_view = false;
+
+globalvar summation_view_spawned;
+summation_view_spawned = false;
+
 todraw = -1;
 tick = 0;
 

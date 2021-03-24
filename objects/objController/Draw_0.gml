@@ -18,6 +18,13 @@ if(selective_overlay_on){
 		}
 	}
 }
+
+if(summation_view){
+	if(!summation_view_spawned){
+		summation_view_spawned = true;	
+	}
+}
+
 if(isolation_mode){
 	if(!has_spawned_isolation_bricks){
 		has_spawned_isolation_bricks = true;

@@ -28,7 +28,8 @@ function drawUI(){
 		"2 will trigger Isolation Mode which blacks out non-repeating eyes (turns overlay mode on)\n" +
 		"3 will toggle Music Mode 5 blank, 0 C, 1 D, 2 E, 3 F, 4 G\n"+
 		"P will cause the game to play the notes as noted above\n" + 
-		"T will allow you to overlay things in more detail");
+		"T will allow you to overlay things in more detail\n"+
+		"0 will show summations of overlayed numbers");
 	}
 	
 	if(keyboard_check_released(ord("M"))){
@@ -38,7 +39,9 @@ function drawUI(){
 		
 		instance_destroy(object_overlay_checker);
 		has_spawned_isolation_bricks = false;
-		
+		summation_view_spawned = false;
+		instance_destroy(object_summation_checker);
+		instance_destroy(object_summation_finisher);
 		ds_queue_clear(music_queue);
 	}
 	
@@ -63,6 +66,13 @@ function drawUI(){
 		selective_overlay_on = !selective_overlay_on;
 		if(selective_overlay_on)
 		selective_overlay = get_string("Show Selective Eyes overlayed, default is all","012345678");
+	}
+	
+	if(keyboard_check_pressed(ord("0"))){
+		summation_view = !summation_view;
+		summation_view_spawned = false;
+		instance_destroy(object_summation_checker);
+		instance_destroy(object_summation_finisher);
 	}
 	
 	if(keyboard_check_pressed(ord("P"))){

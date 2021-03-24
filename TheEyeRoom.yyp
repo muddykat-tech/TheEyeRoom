@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"object_summation_finisher","path":"objects/object_summation_finisher/object_summation_finisher.yy",},"order":4,},
     {"id":{"name":"sprite_eyes","path":"sprites/sprite_eyes/sprite_eyes.yy",},"order":0,},
     {"id":{"name":"addNewEyeMessage","path":"scripts/addNewEyeMessage/addNewEyeMessage.yy",},"order":4,},
     {"id":{"name":"objController","path":"objects/objController/objController.yy",},"order":0,},
@@ -16,10 +17,12 @@
     {"id":{"name":"drawEyeMessage","path":"scripts/drawEyeMessage/drawEyeMessage.yy",},"order":2,},
     {"id":{"name":"snd_note_e","path":"sounds/snd_note_e/snd_note_e.yy",},"order":2,},
     {"id":{"name":"sprite_eyes_lines_origin","path":"sprites/sprite_eyes_lines_origin/sprite_eyes_lines_origin.yy",},"order":3,},
+    {"id":{"name":"sprite_sum_col","path":"sprites/sprite_sum_col/sprite_sum_col.yy",},"order":7,},
     {"id":{"name":"snd_note_c","path":"sounds/snd_note_c/snd_note_c.yy",},"order":0,},
     {"id":{"name":"toLetter","path":"scripts/toLetter/toLetter.yy",},"order":6,},
     {"id":{"name":"snd_note_g","path":"sounds/snd_note_g/snd_note_g.yy",},"order":4,},
     {"id":{"name":"snd_note_d","path":"sounds/snd_note_d/snd_note_d.yy",},"order":1,},
+    {"id":{"name":"object_summation_checker","path":"objects/object_summation_checker/object_summation_checker.yy",},"order":3,},
     {"id":{"name":"snd_note_f","path":"sounds/snd_note_f/snd_note_f.yy",},"order":3,},
     {"id":{"name":"addEyeDataLine","path":"scripts/addEyeDataLine/addEyeDataLine.yy",},"order":0,},
     {"id":{"name":"object_overlay_checker","path":"objects/object_overlay_checker/object_overlay_checker.yy",},"order":1,},

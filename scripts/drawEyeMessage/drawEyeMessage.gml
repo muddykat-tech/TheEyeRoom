@@ -27,7 +27,7 @@ function drawEyeMessage(eye_data_holder){
 			
 			
 			isOffsetLine = !isOffsetLine
-			ypos += 7 * image_size;
+			ypos += 8 * image_size;
 			xpos = message_x + ((6 * image_size) * isOffsetLine);
 		} else {
 			
@@ -71,6 +71,33 @@ function drawEyeMessage(eye_data_holder){
 				}
 			}
 			
+			if(summation_view){
+				if(!summation_view_spawned){
+					var inst = instance_position(xpos,ypos, object_summation_checker);	
+						
+					if(inst == noone){
+						var check = instance_create_layer(xpos,ypos,"Controller",object_summation_checker);
+						check.image_xscale = image_size;
+						check.image_yscale = image_size;
+						check.eye_index = eye_data;
+						check.eye_num = real(eye_data);
+						check.xpos = xpos - message_x;
+						check.ypos = ypos - message_y;
+						check.eye_id = eye_data_holder;
+					} else {
+						if(inst.eye_id != eye_data_holder){
+							if(!ds_map_exists(inst.eye_id_contained, eye_data_holder)){
+								with(inst){
+									eye_id_contained[? eye_data_holder] = true;	
+								}
+								inst.eye_num += real(eye_data);
+								show_debug_message("New Data");
+							}
+						}
+					}
+				}
+			}
+			
 			if(isolation_mode){
 				if(!has_spawned_isolation_bricks){
 					var check = instance_create_layer(xpos,ypos,"Instances",object_overlay_checker);
@@ -94,7 +121,7 @@ function drawEyeMessage(eye_data_holder){
 					draw_sprite_ext(eye_blackout,0, xpos, ypos,image_size,image_size,0,c_white,1);
 				}
 			}
-		xpos += (11) * image_size;
+		xpos += (12) * image_size;
 		}
 		
 	}
