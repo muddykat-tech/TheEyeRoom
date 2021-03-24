@@ -20,19 +20,19 @@ if(tick % 16 == 0 && !music_paused){
 		var data = ds_queue_dequeue(music_queue);
 		todraw = [data[1],data[2]]
 		switch(data[0]){
-			case 1:
+			case 0:
 				audio_play_sound(snd_note_c,0,false);
 			break;
-			case 2:
+			case 1:
 				audio_play_sound(snd_note_d,0,false);
 			break;
-			case 3:
+			case 2:
 				audio_play_sound(snd_note_e,0,false);
 			break;
-			case 4:
+			case 3:
 				audio_play_sound(snd_note_f,0,false);
 			break;
-			case 5:
+			case 4:
 				audio_play_sound(snd_note_g,0,false);
 			break;
 		}

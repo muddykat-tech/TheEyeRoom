@@ -26,7 +26,7 @@ function drawUI(){
 		"H will toggle color block mode\n" + 
 		"1 will trigger selective isolation of eye types\n" + 
 		"2 will trigger Isolation Mode which blacks out non-repeating eyes (turns overlay mode on)\n" +
-		"3 will toggle Music Mode 0 blank, 1 C, 2 D, 3 E, 4 F, 5 G\n"+
+		"3 will toggle Music Mode 5 blank, 0 C, 1 D, 2 E, 3 F, 4 G\n"+
 		"P will cause the game to play the notes as noted above");
 	}
 	

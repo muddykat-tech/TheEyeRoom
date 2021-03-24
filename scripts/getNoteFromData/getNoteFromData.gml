@@ -3,17 +3,17 @@
 function getNoteFromData(data){
 	switch(data){
 		case 0:
-			return " ";
-		case 1:
 			return "C";
-		case 2:
+		case 1:
 			return "D";
-		case 3:
+		case 2:
 			return "E";
-		case 4:
+		case 3:
 			return "F";
-		case 5:
+		case 4:
 			return "G";
+		case 5:
+			return " ";
 		default:
 			return " ";
 	}

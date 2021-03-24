@@ -12,7 +12,7 @@ function playEyeMessage(data){
 		
 		if(element == EYE_POSITIONS.newline){
 			
-			ds_queue_enqueue(music_queue, [element, xpos,ypos, image_size]);
+			//ds_queue_enqueue(music_queue, [element, xpos,ypos, image_size]);
 			isOffsetLine = !isOffsetLine
 			ypos += 7;
 			xpos = isOffsetLine ? 6 : 0;
