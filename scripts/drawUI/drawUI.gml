@@ -26,7 +26,8 @@ function drawUI(){
 		"H will toggle color block mode\n" + 
 		"1 will trigger selective isolation of eye types\n" + 
 		"2 will trigger Isolation Mode which blacks out non-repeating eyes (turns overlay mode on)\n" +
-		"3 will toggle Music Mode 0 blank, 1 C, 2 D, 3 E, 4 F, 5 G");
+		"3 will toggle Music Mode 0 blank, 1 C, 2 D, 3 E, 4 F, 5 G\n"+
+		"P will cause the game to play the notes as noted above");
 	}
 	
 	if(keyboard_check_released(ord("M"))){
@@ -36,6 +37,8 @@ function drawUI(){
 		
 		instance_destroy(object_overlay_checker);
 		has_spawned_isolation_bricks = false;
+		
+		ds_queue_clear(music_queue);
 	}
 	
 	if(keyboard_check_released(ord("U"))){
@@ -57,6 +60,15 @@ function drawUI(){
 		
 	if(keyboard_check_released(ord("T"))){
 		
+	}
+	
+	if(keyboard_check_pressed(ord("P"))){
+		
+		if(ds_queue_empty(music_queue)){
+			playEyeMessage(message_map[? selected_message]);
+		} else {
+			music_paused = !music_paused;	
+		}
 	}
 	
 	if(keyboard_check_pressed(ord("2"))){

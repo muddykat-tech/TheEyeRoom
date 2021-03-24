@@ -17,3 +17,4 @@ if(keyboard_check_released(ord("N"))){
 if(keyboard_check_released(ord("E"))){
 	show_eyes = !show_eyes;	
 }
+

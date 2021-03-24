@@ -32,6 +32,10 @@ globalvar overlay_all;
 globalvar show_alphabet;
 globalvar music_mode;
 
+globalvar music_queue;
+
+music_queue = ds_queue_create();
+
 draw_set_font(fnt_default);
 
 overlay_all = false;
@@ -72,6 +76,12 @@ has_spawned_isolation_bricks = false;
 
 globalvar blackout_index;
 blackout_index = 0;
+
+globalvar music_paused;
+music_paused = false;
+
+todraw = -1;
+tick = 0;
 
 message_0 = "";
 message_0 = addEyeDataLine(message_0, "2010132233040411302321143130330040240005");
@@ -195,3 +205,5 @@ message_8 = addEyeDataLine(message_8, "1312242202220415");
 message_8 = addEyeDataLine(message_8, "2324421013314315");
 
 addNewEyeMessage(MESSAGE_ID.E5, message_8);
+
+alarm[0] = 0.75;

@@ -14,3 +14,33 @@ if(isolation_mode){
 		has_spawned_isolation_bricks = true;
 	}
 }
+
+if(tick % 16 == 0 && !music_paused){
+	if(!ds_queue_empty(music_queue)){
+		var data = ds_queue_dequeue(music_queue);
+		todraw = [data[1],data[2]]
+		switch(data[0]){
+			case 1:
+				audio_play_sound(snd_note_c,0,false);
+			break;
+			case 2:
+				audio_play_sound(snd_note_d,0,false);
+			break;
+			case 3:
+				audio_play_sound(snd_note_e,0,false);
+			break;
+			case 4:
+				audio_play_sound(snd_note_f,0,false);
+			break;
+			case 5:
+				audio_play_sound(snd_note_g,0,false);
+			break;
+		}
+	}
+	tick = 0;
+}
+tick++;
+
+if(todraw != -1){
+	draw_sprite_ext(eye_color_blocks,0,message_x + (todraw[0] * message_size), message_y + (todraw[1] * message_size), message_size, message_size,0,c_white,0.75);	
+}

@@ -13,6 +13,14 @@ function drawEyeMessage(eye_data_holder){
 		
 
 		if(eye_data == EYE_POSITIONS.newline){
+			
+			if(music_mode){
+				draw_set_color(c_purple);
+				var note = getNoteFromData(eye_data);
+				draw_text_transformed(xpos,ypos,note, image_size * 0.75, image_size * 0.75,0);
+				draw_set_color(c_white);
+			}
+			
 			isOffsetLine = !isOffsetLine
 			ypos += 7 * image_size;
 			xpos = message_x + ((6 * image_size) * isOffsetLine);
