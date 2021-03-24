@@ -1,17 +1,32 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if(use_custom){
-	drawEyeMessage(custom_data);
+if(selective_overlay_on){
+	var selective_size = 1 + string_length(selective_overlay);
+	for(var si = 0; si < selective_size; si++){
+		var selec = string_char_at(selective_overlay, si);
+		drawEyeMessage(message_map[? real(selec)]);
+	}
+	
 } else {
-	for(var message_index = 0; message_index < MESSAGE_ID.E5; message_index++){
-		var selec = overlay_all ? message_index : selected_message;
-		drawEyeMessage(message_map[? selec]);
+	if(use_custom){
+		drawEyeMessage(custom_data);
+	} else {
+		for(var message_index = 0; message_index < MESSAGE_ID.E5; message_index++){
+			var selec = overlay_all ? message_index : selected_message;
+			drawEyeMessage(message_map[? selec]);
+		}
 	}
 }
 if(isolation_mode){
 	if(!has_spawned_isolation_bricks){
 		has_spawned_isolation_bricks = true;
+	}
+}
+
+if(show_trigram){
+	if(!has_spawned_trigram){
+		has_spawned_trigram = true;	
 	}
 }
 

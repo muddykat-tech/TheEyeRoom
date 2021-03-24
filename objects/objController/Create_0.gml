@@ -62,6 +62,12 @@ use_custom = false;
 globalvar custom_data;
 custom_data = "";
 
+globalvar has_spawned_trigram;
+has_spawned_trigram = false;
+
+globalvar show_trigram;
+show_trigram = false;
+
 globalvar show_color_blocks;
 show_color_blocks = false;
 
@@ -79,6 +85,12 @@ blackout_index = 0;
 
 globalvar music_paused;
 music_paused = false;
+
+globalvar selective_overlay;
+selective_overlay = "";
+
+globalvar selective_overlay_on;
+selective_overlay_on = false;
 
 todraw = -1;
 tick = 0;

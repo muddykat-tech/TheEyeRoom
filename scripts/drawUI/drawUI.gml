@@ -27,7 +27,8 @@ function drawUI(){
 		"1 will trigger selective isolation of eye types\n" + 
 		"2 will trigger Isolation Mode which blacks out non-repeating eyes (turns overlay mode on)\n" +
 		"3 will toggle Music Mode 5 blank, 0 C, 1 D, 2 E, 3 F, 4 G\n"+
-		"P will cause the game to play the notes as noted above");
+		"P will cause the game to play the notes as noted above\n" + 
+		"T will allow you to overlay things in more detail");
 	}
 	
 	if(keyboard_check_released(ord("M"))){
@@ -59,7 +60,9 @@ function drawUI(){
 	}
 		
 	if(keyboard_check_released(ord("T"))){
-		
+		selective_overlay_on = !selective_overlay_on;
+		if(selective_overlay_on)
+		selective_overlay = get_string("Show Selective Eyes overlayed, default is all","012345678");
 	}
 	
 	if(keyboard_check_pressed(ord("P"))){

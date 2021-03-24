@@ -7,6 +7,10 @@ function drawEyeMessage(eye_data_holder){
 	var eye_data_size = string_length(eye_data_holder);
 	
 	var isOffsetLine = false;
+	var eye_color = c_white;
+	var color_increment = 0;
+	
+	color_types = [c_white, c_red]
 	
 	for(var eye_data_index = 0; eye_data_index < eye_data_size; eye_data_index++){
 		var eye_data = string_char_at(eye_data_holder, eye_data_index);
@@ -21,11 +25,12 @@ function drawEyeMessage(eye_data_holder){
 				draw_set_color(c_white);
 			}
 			
+			
 			isOffsetLine = !isOffsetLine
 			ypos += 7 * image_size;
 			xpos = message_x + ((6 * image_size) * isOffsetLine);
 		} else {
-	
+			
 			if(show_alphabet){
 				if(eye_data != EYE_POSITIONS.newline){
 					draw_set_color(c_blue);
@@ -53,6 +58,19 @@ function drawEyeMessage(eye_data_holder){
 				draw_sprite_ext(eye_color_blocks,eye_data, xpos, ypos,image_size,image_size,0,c_white,1);
 			}
 			
+			if(show_trigram){
+				if(!has_spawned_trigram){
+					var check = instance_create_layer(xpos,ypos,"Controller",object_trigram_checker);
+					check.image_xscale = image_size;
+					check.image_yscale = image_size;
+					check.eye_index = eye_data;
+					check.xpos = xpos - message_x;
+					check.ypos = ypos - message_y;
+					check.image_alpha = 0.5;
+					check.is_oddline = isOffsetLine;
+				}
+			}
+			
 			if(isolation_mode){
 				if(!has_spawned_isolation_bricks){
 					var check = instance_create_layer(xpos,ypos,"Instances",object_overlay_checker);
@@ -78,6 +96,7 @@ function drawEyeMessage(eye_data_holder){
 			}
 		xpos += (11) * image_size;
 		}
+		
 	}
 	
 }
