@@ -29,7 +29,8 @@ function drawUI(){
 		"3 will toggle Music Mode 5 blank, 0 C, 1 D, 2 E, 3 F, 4 G\n"+
 		"P will cause the game to play the notes as noted above\n" + 
 		"T will allow you to overlay things in more detail\n"+
-		"0 will show summations of overlayed numbers");
+		"0 will show summations of overlayed numbers\n"+
+		"9 will draw based on the direction the yes look towards. (click on screen to start once toggled)");
 	}
 	
 	if(keyboard_check_released(ord("M"))){
@@ -42,7 +43,12 @@ function drawUI(){
 		summation_view_spawned = false;
 		instance_destroy(object_summation_checker);
 		instance_destroy(object_summation_finisher);
+		//instance_destroy(object_direction_draw);
 		ds_queue_clear(music_queue);
+	}
+	
+	if(keyboard_check_released(ord("9"))){
+		draw_directions = !draw_directions;
 	}
 	
 	if(keyboard_check_released(ord("U"))){

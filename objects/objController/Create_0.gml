@@ -98,6 +98,9 @@ summation_view = false;
 globalvar summation_view_spawned;
 summation_view_spawned = false;
 
+globalvar draw_directions;
+draw_directions = false;
+
 todraw = -1;
 tick = 0;
 

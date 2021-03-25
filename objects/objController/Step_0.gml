@@ -18,3 +18,13 @@ if(keyboard_check_released(ord("E"))){
 	show_eyes = !show_eyes;	
 }
 
+if(draw_directions){
+	if(mouse_check_button_released(mb_left)){
+		var in = instance_create_layer(mouse_x,mouse_y,"Instances", object_direction_draw);
+		in.lead = true;
+	}
+} else {
+	if(instance_exists(object_direction_draw)){
+		instance_destroy(object_direction_draw);	
+	}
+}
